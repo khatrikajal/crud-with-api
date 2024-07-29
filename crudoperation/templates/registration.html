@@ -1,0 +1,139 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<style>
+  body {
+    background-color: #f0f2f5;
+    font-family: Arial, sans-serif;
+  }
+
+  h1 {
+    color: #4a4a4a;
+    margin-bottom: 1rem;
+    text-align: center;
+    font-size: 2.5rem;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    padding: 50px;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    margin-top: 100px;
+    background-color: #fff;
+    border-radius: 10px;
+  }
+
+  label {
+    color: #666;
+    margin-bottom: 0.5rem;
+    text-align: left;
+    margin-bottom: 5px;
+  }
+
+  .input-group {
+    position: relative;
+    margin-bottom: 1.5rem;
+  }
+
+  .input-group input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    padding-left: 2.5rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .input-group input:focus {
+    border-color: #6e8efb;
+    box-shadow: 0 0 10px rgba(110, 142, 251, 0.5);
+    outline: none;
+  }
+
+  .input-group .icon {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    color: #aaa;
+  }
+
+  button, input[type="submit"] {
+    padding: 0.75rem;
+    border: none;
+    border-radius: 5px;
+    background: #6e8efb;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+    margin-top: 1rem;
+  }
+
+  button:hover, input[type="submit"]:hover {
+    background: #a777e3;
+    box-shadow: 0 0 10px rgba(167, 119, 227, 0.5);
+  }
+
+  .links a {
+    display: block;
+    color: #6e8efb;
+    margin: 0.5rem 0;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    text-align: center;
+  }
+
+  .links a:hover {
+    color: #a777e3;
+  }
+
+  @media (max-width: 600px) {
+    form {
+      padding: 20px;
+      margin-top: 50px;
+    }
+  }
+</style>
+<div class="container">
+  <form> 
+    <h1>Register</h1>
+    <div class="input-group">
+      <span class="icon">&#128100;</span>
+      <label for="employee">Employee ID</label>
+      <input
+        type="number"
+        name="employee"
+        placeholder="Employee ID"
+        required
+      />
+    </div>
+    <div class="input-group">
+      <span class="icon">&#128274;</span>
+      <label for="password">Password</label>
+      <input
+        type="password"
+        name="password"
+        placeholder="Password"
+        required
+      />
+    </div>
+    <div class="input-group">
+      <span class="icon">&#128274;</span>
+      <label for="password2">Confirm Password</label>
+      <input
+        type="password"
+        name="password2"
+        placeholder="Confirm Password"
+        required
+      />
+    </div>
+    <input type="submit" value="Register" />
+  </form>
+</div>
+{% endblock %}
